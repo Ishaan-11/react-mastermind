@@ -2,14 +2,14 @@ import React from "react";
 import ScoreButton from "../ScoreButton/ScoreButton";
 import GuessScore from "../GuessScore/GuessScore";
 import GuessPegs from "../GuessPegs/GuessPegs";
-import styles from './GuessRow.css';
+import './GuessRow.css';
 
 
 function GuessRow (props) {
   return(
-    <div className={styles.GuessRow}>
+    <div className="GuessRow">
       <div
-        className={styles.rowNum}
+        className="rowNum"
         style={{color: props.currentGuess ? 'black' : 'lightgrey'}}
       >
         {props.rowIdx + 1}

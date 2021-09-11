@@ -1,6 +1,6 @@
 import React from "react";
-import './GuessPegs.css';
 import GuessPeg from "../GuessPeg/GuessPeg";
+import './GuessPegs.css';
 
 function GuessPegs(props) {
   return (

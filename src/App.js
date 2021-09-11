@@ -9,6 +9,23 @@ function App() {
   const [ selColorIdx, setSelColorIdx] = useState(0);
   const [ code, setCode ] = useState(genCode());
   const [ isTiming, setIsTiming ] = useState(true);
+  const [ elapsedTime, setElapsedTime ] = useState(0);
+
+  let winTries = getWinTries();
+
+
+  function getInitialState() {
+    setSelColorIdx(0);
+    setGuesses(getNewGuess());
+    setCode(genCode());
+    setElapsedTime(0);
+    setIsTiming(true);
+  }
+
+  function getWinTries() {
+    let lastGuess = guesses.length - 1;
+    return guesses[lastGuess].score.perfect === 4 ? lastGuess + 1 : 0;
+  }
 
   function getNewGuess() {
     return {
@@ -20,9 +37,21 @@ function App() {
     };
   }
 
+  function handleTimerUpdate() {
+    setElapsedTime((preValue) => ++preValue);
+  }
+
   function genCode() {
     let numColors = colors.length;
     return new Array(4).fill().map(dummy => Math.floor(Math.random() * numColors));
+  }
+
+  function handleColorSelection(colorIdx){
+    setSelColorIdx(colorIdx);
+  }
+
+  function handleNewGameClick() {
+    getInitialState();
   }
 
   function handlePegClick(pegIdx) {
@@ -61,7 +90,7 @@ function App() {
       }
     });
 
-    let guessesCopy = [...this.state.guesses];
+    let guessesCopy = [...guesses];
     let guessCopy = {...guessesCopy[currentGuessIdx]};
     let scoreCopy = {...guessCopy.score};
 
@@ -85,11 +114,17 @@ function App() {
     <div>
       <header className='header-footer'>R E A C T &nbsp;&nbsp;&nbsp;  M A S T E R M I N D</header>
       <GamePage
+          winTries={winTries}
           colors={colors}
+          selColorIdx={selColorIdx}
           guesses={guesses}
+          elapsedTime={elapsedTime}
           isTiming={isTiming}
+          handleColorSelection={handleColorSelection}
+          handleNewGameClick={handleNewGameClick}
           handlePegClick={handlePegClick}
           handleScoreClick={handleScoreClick}
+          handleTimerUpdate={handleTimerUpdate}
       />
     </div>
   );

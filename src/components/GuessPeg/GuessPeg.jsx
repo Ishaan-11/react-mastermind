@@ -1,10 +1,10 @@
 import React from "react";
-import styles from './GuessPeg.css';
+import './GuessPeg.css';
 
 function GuessPeg(props) {
   return (
     <div
-      className={styles.peg}
+      className="peg"
       style={{
         backgroundColor: props.color,
         border: props.color ? `1px solid ${props.color}`: '1px dashed grey',

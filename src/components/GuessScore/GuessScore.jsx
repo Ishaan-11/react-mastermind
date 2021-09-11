@@ -1,4 +1,5 @@
 import React from "react";
+import './GuessScore.css';
 
 function GuessScore({ score }) {
   let scores = ('P'.repeat(score.perfect) + 'A'.repeat(score.almost) +
