@@ -14,7 +14,7 @@ function App() {
 
   function getInitialState() {
     setSelColorIdx(0);
-    setGuesses(getNewGuess());
+    setGuesses([getNewGuess()]);
     setCode(genCode());
   }
 
@@ -91,8 +91,7 @@ function App() {
     guessCopy.score = scoreCopy;
     guessesCopy[currentGuessIdx] = guessCopy;
 
-    if (perfect === 4) {
-    } else {
+    if (perfect !== 4) {
       guessesCopy.push(getNewGuess());
     }
 
