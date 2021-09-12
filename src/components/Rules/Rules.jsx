@@ -4,7 +4,7 @@ import './Rules.css';
 function Rules() {
   const [ showRule, setShowRule ] = useState(false);
   const link = 'https://en.wikipedia.org/wiki/Mastermind_(board_game)';
-  const rulesTitle = showRule ? 'Show Rules' : 'Hide Rules';
+  const rulesTitle = showRule ? 'Hide Rules' : 'Show Rules';
   const style = {
     display: showRule ? 'block' : 'none',
   }
