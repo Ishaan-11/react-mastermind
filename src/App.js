@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './App.css';
 import GamePage from './components/GamePage/GamePage';
 
-const colors = ['#7CCCE5', '#FDE47F', '#E04644', '#B576AD', '#B7D968'];
+const colors = ['#FFB400', '#FF5A5F', '#8CE071', '#00D1C1', '#007A87', '#7B0051'];
 
 function App() {
   const [ guesses, setGuesses ] = useState([getNewGuess()]);
@@ -101,7 +101,7 @@ function App() {
 
   return (
     <div>
-      <header className='header-footer'>R E A C T &nbsp;&nbsp;&nbsp;  M A S T E R M I N D</header>
+      <header className='header-footer'>M A S T E R M I N D</header>
       <GamePage
           winTries={winTries}
           colors={colors}
