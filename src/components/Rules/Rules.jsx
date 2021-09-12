@@ -6,7 +6,7 @@ function Rules() {
   const link = 'https://en.wikipedia.org/wiki/Mastermind_(board_game)';
   const rulesTitle = showRule ? 'Show Rules' : 'Hide Rules';
   const style = {
-    display: showRule ? 'none' : 'block',
+    display: showRule ? 'block' : 'none',
   }
 
   function toogleRules() {
@@ -23,7 +23,7 @@ function Rules() {
       in a correct position and color. A white dot
       indicates the existence of a correct color in an
       incorrect position. <br />
-      More info on <a href={link}>Wikipedia</a>.
+      More info on <a href={link} target='_blank'>Wikipedia</a>.
       </p>
     </div>
   );
