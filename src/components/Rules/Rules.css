@@ -1,0 +1,22 @@
+.rules {
+  margin: 0.33em auto 0.8em auto;
+  max-width: 450px;
+}
+
+.rules h3 {
+  font-size: 1.05em;
+  margin: 5px 0 0 0;
+  color: #333;
+  font-weight: normal;
+  text-align: center;
+  cursor: pointer;
+}
+
+.rules p {
+  text-align: justify;
+  -moz-text-align-last: center;
+  text-align-last: center;
+  margin: 5px 1em;
+  font-size: 0.92em;
+  color: #666;
+}

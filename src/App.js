@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import './App.css';
 import GamePage from './components/GamePage/GamePage';
+import Rules from './components/Rules/Rules';
+import './App.css';
 
 const colors = ['#FFB400', '#FF5A5F', '#8CE071', '#00D1C1', '#007A87', '#7B0051'];
 
@@ -102,6 +103,7 @@ function App() {
   return (
     <div>
       <header className='header-footer'>M A S T E R M I N D</header>
+      <Rules />
       <GamePage
           winTries={winTries}
           colors={colors}
