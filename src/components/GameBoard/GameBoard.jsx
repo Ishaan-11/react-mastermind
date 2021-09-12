@@ -8,6 +8,7 @@ function GameBoard (props) {
       {props.guesses.map((guess, idx) =>
         <GuessRow
           guess={guess}
+          defeat={props.defeat}
           colors={props.colors}
           rowIdx={idx}
           currentGuess={idx === (props.guesses.length - 1)}

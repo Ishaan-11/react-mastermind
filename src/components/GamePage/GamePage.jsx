@@ -12,6 +12,7 @@ function GamePage (props) {
       <div className="flex-h align-flex-end">
         <GameBoard
           colors={props.colors}
+          defeat={props.defeat}
           guesses={props.guesses}
           handlePegClick={props.handlePegClick}
           handleScoreClick={props.handleScoreClick}

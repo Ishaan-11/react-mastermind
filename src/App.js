@@ -62,11 +62,6 @@ function App() {
   }
 
   function handleScoreClick() {
-    if (guesses.length >= 10) {
-      setDefeat(true);
-      return;
-    }
-
     let currentGuessIdx = guesses.length - 1;
 
     let guessCodeCopy = [...guesses[currentGuessIdx].code];
@@ -99,12 +94,16 @@ function App() {
     guessCopy.score = scoreCopy;
     guessesCopy[currentGuessIdx] = guessCopy;
 
-    if (perfect !== 4) {
+    if (perfect !== 4 && guesses.length < 10) {
       guessesCopy.push(getNewGuess());
     }
 
-
     setGuesses(guessesCopy);
+
+    if (guesses.length >= 10) {
+      setDefeat(true);
+      return;
+    }
   }
 
   return (

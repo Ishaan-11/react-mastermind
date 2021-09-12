@@ -21,7 +21,7 @@ function GuessRow (props) {
         handlePegClick={props.handlePegClick}
       />
       {
-        props.currentGuess && props.guess.score.perfect !== 4 ?
+       !props.defeat && props.currentGuess && props.guess.score.perfect !== 4 ?
           <ScoreButton
             disabled={props.guess.code.includes(null)}
             handleScoreClick={props.handleScoreClick}
