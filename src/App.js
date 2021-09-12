@@ -8,8 +8,6 @@ function App() {
   const [ guesses, setGuesses ] = useState([getNewGuess()]);
   const [ selColorIdx, setSelColorIdx] = useState(0);
   const [ code, setCode ] = useState(genCode());
-  const [ isTiming, setIsTiming ] = useState(true);
-  const [ elapsedTime, setElapsedTime ] = useState(0);
 
   let winTries = getWinTries();
 
@@ -18,8 +16,6 @@ function App() {
     setSelColorIdx(0);
     setGuesses(getNewGuess());
     setCode(genCode());
-    setElapsedTime(0);
-    setIsTiming(true);
   }
 
   function getWinTries() {
@@ -35,10 +31,6 @@ function App() {
         almost: 0
       }
     };
-  }
-
-  function handleTimerUpdate() {
-    setElapsedTime((preValue) => ++preValue);
   }
 
   function genCode() {
@@ -100,14 +92,12 @@ function App() {
     guessesCopy[currentGuessIdx] = guessCopy;
 
     if (perfect === 4) {
-      setIsTiming(false);
     } else {
       guessesCopy.push(getNewGuess());
     }
 
 
     setGuesses(guessesCopy);
-    setIsTiming(perfect !== 4);
   }
 
   return (
@@ -118,13 +108,10 @@ function App() {
           colors={colors}
           selColorIdx={selColorIdx}
           guesses={guesses}
-          elapsedTime={elapsedTime}
-          isTiming={isTiming}
           handleColorSelection={handleColorSelection}
           handleNewGameClick={handleNewGameClick}
           handlePegClick={handlePegClick}
           handleScoreClick={handleScoreClick}
-          handleTimerUpdate={handleTimerUpdate}
       />
     </div>
   );
