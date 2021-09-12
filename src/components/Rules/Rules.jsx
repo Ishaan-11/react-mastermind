@@ -23,7 +23,7 @@ function Rules() {
       in a correct position and color. A white dot
       indicates the existence of a correct color in an
       incorrect position. <br />
-      More info on <a href={link} target='_blank'>Wikipedia</a>.
+      More info on <a href={link} target='_blank' rel='noopener noreferrer'>Wikipedia</a>.
       </p>
     </div>
   );
