@@ -8,6 +8,7 @@ const colors = ['#FFB400', '#FF5A5F', '#8CE071', '#00D1C1', '#007A87', '#7B0051'
 function App() {
   const [ guesses, setGuesses ] = useState([getNewGuess()]);
   const [ selColorIdx, setSelColorIdx] = useState(0);
+  const [ defeat, setDefeat] = useState(false);
   const [ code, setCode ] = useState(genCode());
 
   let winTries = getWinTries();
@@ -15,6 +16,7 @@ function App() {
 
   function getInitialState() {
     setSelColorIdx(0);
+    setDefeat(false);
     setGuesses([getNewGuess()]);
     setCode(genCode());
   }
@@ -60,6 +62,11 @@ function App() {
   }
 
   function handleScoreClick() {
+    if (guesses.length >= 10) {
+      setDefeat(true);
+      return;
+    }
+
     let currentGuessIdx = guesses.length - 1;
 
     let guessCodeCopy = [...guesses[currentGuessIdx].code];
@@ -106,6 +113,7 @@ function App() {
       <Rules />
       <GamePage
           winTries={winTries}
+          defeat={defeat}
           colors={colors}
           selColorIdx={selColorIdx}
           guesses={guesses}

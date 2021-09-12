@@ -5,6 +5,8 @@ import NewGameButton from "../NewGameButton/NewGameButton";
 import './GamePage.css';
 
 function GamePage (props) {
+  const footerMessage = (props.defeat ? 'You  lose!' : (props.winTries ? `You Won in ${props.winTries} Guesses!` : 'Good Luck!'));
+
   return (
     <div className="GamePage">
       <div className="flex-h align-flex-end">
@@ -24,7 +26,7 @@ function GamePage (props) {
         </div>
       </div>
       <footer className='header-footer'>
-        {(props.winTries ? `You Won in ${props.winTries} Guesses!` : 'Good Luck!')}
+        {footerMessage}
       </footer>
     </div>
   );
